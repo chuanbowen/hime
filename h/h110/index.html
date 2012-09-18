@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>123_嘿咪嘿咪</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/templets/hime/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+-->
+</script>
+<script language="javascript" type="text/javascript">
+function showIntro()
+{
+	$(".intro").show();
+	$(".bgm").hide();
+}
+function showBgm()
+{
+	$(".bgm").show();
+	$(".intro").hide();
+}
+</script>
+</head>
+<body class="articleview">
+<div class="header_top">  
+    <div class="w960 center">  
+     <span id="time" class="time">织梦CMS - 轻松建站从此开始！</span>
+     <div class="toplinks"><a href="/plus/heightsearch.php" target="_blank">高级搜索</a>|<a href="/data/sitemap.html" target="_blank">网站地图</a>|<a href="/tags.php">TAG标签</a><a href="/data/rssmap.html" class="rss">RSS订阅</a><span>[<a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.acghime.tv');">设为首页</a>] [<a href="javascript:window.external.AddFavorite('http://www.acghime.tv','嘿咪嘿咪')">加入收藏</a>]</span></div>
+    </div> 
+</div>
+<div class="header">
+	<div class="top w960 center">
+      <div class="title">
+        <h1><a href="http://www.acghime.tv"><img src="/templets/hime/images/logo.gif" height="54" width="216" alt="嘿咪嘿咪"/></a> </h1>
+      </div>
+      <div class="banner"><script type="text/javascript" src="http://ad.dedecms.com/adsview/?action=single&key=ctenttpbanner1&charset=gbk"></script></div>
+      <div class="banner2"><script type="text/javascript" src="http://ad.dedecms.com/adsview/?action=single&key=ctenttpbanner2&charset=gbk"></script></div>
+       
+	</div><!-- //top -->
+	<!-- //菜单 -->
+	<div class="module blue mT10 wrapper w963">
+  	<div class="top">
+    	<!-- //如果不使用currentstyle，可以在channel标签加入 cacheid='channeltoplist' 属性提升性能 -->
+    <div id="navMenu">
+    	<ul>
+      	<li><a href='/'><span>主页</span></a></li>
+      	<li class='hover'><a href='/a/webbase/index.html'  rel='dropmenu1'><span>网页基础</span></a></li>
+      	<li><a href='/a/pics/index.html' ><span>站长图集</span></a></li>
+      	
+      	<li><a href='/a/infos/index.html' ><span>分类信息</span></a></li>
+      	
+    	</ul>
+    </div>	
+    <div class="search">
+      <form  name="formsearch" action="/plus/search.php">
+        <div class="form">
+          <h4>搜索</h4>
+           <input type="hidden" name="kwtype" value="0" />
+           <input name="q" type="text" class="search-keyword" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+           <select name="searchtype" class="search-option" id="search-option">
+               <option value="title" selected='1'>检索标题</option>
+               <option value="titlekeyword">智能模糊</option>
+           </select>
+          <button type="submit" class="search-submit">搜索</button>
+        </div>
+        </form>
+        <div class="tags">
+          <h4>热门标签:</h4>
+          <ul>
+          
+            <li><a href='/tags.php?/dedecms5.1/'>dedecms5.1</a></li>
+          
+            <li><a href='/tags.php?/sp1/'>sp1</a></li>
+          
+            <li><a href='/tags.php?/%E5%85%8D%E8%B4%B9%E7%89%88/'>免费版</a></li>
+          
+          </ul>
+        </div>
+    </div><!-- //search -->
+		</div>
+	</div>
+</div><!-- //header -->
+
+<!-- /header -->
+<div class="hime">
+<div class="videopage">
+ 	<div class="videobox"> 
+ 		<div class="videoinfo">
+			<!--  
+ 				<script src="/plus/count.php?view=yes&aid=110&mid=8" type='text/javascript' language="javascript"></script>次</div>
+			-->
+
+			<div class="leftinfo">
+				<h2>123与呵呵</h2>
+				<div class="info1">
+					<span class="position"><a href='http://www.acghime.tv/'>主页</a> > <a href='/a/webbase/index.html'>网页基础</a> > <a href='/h/index.html'>acg</a> > </span>
+					<span class="time">2012-03-29 18:29</span>
+					<span class="lump">播放:1000</span>
+					<span class="lump">评论:100</span>
+					<span class="lump">收藏:50</span>
+				</div>
+			</div>
+			<div class="rightinfo">
+				<div class="videocover"><img width="80" height="60" src="/templets/hime/images/videocover.jpg" /></div>
+				<div class="info3">
+					<div class="upname">UP主：sh</div>
+					<div class="submitdate">日 期：2012-07-21</div>
+					<div class="score">评 分：9.0</div>
+				</div>
+
+			</div>
+ 			<div class="boxoff"></div>
+ 		</div>
+		<div class="player">视频播放器</div>
+		<div class="info2">
+ 			<div class="tag">TAG:</div>
+ 			<div class="upinfo"></div>
+    		<div class="info4">
+    			<div class="intro"></div>
+    			<div class="bgm" style="display:none;">bgm:千本樱</div>
+    			<div class="tab">
+	    			<ul>
+	    				<li><img width="30" height="30" style="cursor:pointer" onclick="showIntro();" src="/templets/hime/images/chat.png"></img></li>
+	    				<li><img width="30" height="30" style="cursor:pointer" onclick="showBgm();" src="/templets/hime/images/bgm.png"></img></li>
+	    			</ul>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="helpbox">
+    		<div class="share">分享到</div>
+    	</div>
+	</div>
+	<div class="apprc">
+		<div class="rate"><img class="open_rate_btn" src="/templets/hime/images/more.gif"></img></div>
+		<div class="comm"><img class="open_comm_btn" src="/templets/hime/images/more.gif"></img></div>
+	</div>
+ </div>
+ </div>
+<!-- //底部模板 -->
+<div class="footer w960 center mt1 clear">
+    <div class="footer_left"></div>
+    <div class="footer_body">
+		<p class="powered">    
+		<div class="copyright">Powered by acghime.tv © 2011-2012  </div>
+        </p>        
+   </div>
+   <div class="footer_right"></div>
+</div>
+<!-- /footer -->
+</body>
+</html>

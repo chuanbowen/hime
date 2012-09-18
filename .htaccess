@@ -1,0 +1,6 @@
+Options -Indexes
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+RewriteEngine on
+RewriteRule ^/video/h([0-9]+)$ /h/h$1.html [L]
